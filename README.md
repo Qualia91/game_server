@@ -18,7 +18,7 @@ Welcome to the erlang turned based game server. We use cowboy websocket connecti
 
 <details>
   <summary><b>Design</b></summary>
-![Design Diagram](images/design_diagram.svg?raw=true)
+![Design Diagram](images/design_diagram.svg)
 </details>
 
 <details>
