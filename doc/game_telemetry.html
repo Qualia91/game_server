@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module game_telemetry</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module game_telemetry</h1>
+<ul class="index"><li><a href="#description">Description</a></li><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+   Contains all functionality for collecting telemetry on the game server.
+
+<p><b>Version:</b> 0.0.1</p>
+<p><b>Behaviours:</b> <a href="gen_server.html"><tt>gen_server</tt></a>.</p>
+<p><b>Authors:</b> boc_dev.</p>
+
+<h2><a name="description">Description</a></h2>
+   Contains all functionality for collecting telemetry on the game server.
+   Makes use of erlang counters to save telemetry.
+  
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-loop_state">loop_state()</a></h3>
+<p><tt>loop_state() = loop_state</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#code_change-3">code_change/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#game_ended-0">game_ended/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#game_started-0">game_started/0</a></td><td>
+  Call when creating a game to add one to games playes, and games running
+  counters.</td></tr>
+<tr><td valign="top"><a href="#get_games_played-0">get_games_played/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_games_running-0">get_games_running/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_number_of_processes-0">get_number_of_processes/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_private_lobbies_created-0">get_private_lobbies_created/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_public_lobbies_created-0">get_public_lobbies_created/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_server_busy-0">get_server_busy/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_server_start_datetime-0">get_server_start_datetime/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_server_version-0">get_server_version/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_call-3">handle_call/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_cast-2">handle_cast/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_info-2">handle_info/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#init-1">init/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#private_lobby_created-0">private_lobby_created/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#public_lobby_created-0">public_lobby_created/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#server_busy-0">server_busy/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-0">start_link/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#terminate-2">terminate/2</a></td><td></td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="code_change-3">code_change/3</a></h3>
+<div class="spec">
+<p><tt>code_change(OldVsn::any(), LoopState::<a href="#type-loop_state">loop_state()</a>, Extra::any()) -&gt; {ok, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="game_ended-0">game_ended/0</a></h3>
+<div class="spec">
+<p><tt>game_ended() -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="game_started-0">game_started/0</a></h3>
+<div class="spec">
+<p><tt>game_started() -&gt; ok</tt><br></p>
+<p> </p>
+</div><p>
+  Call when creating a game to add one to games playes, and games running
+  counters.</p>
+
+<h3 class="function"><a name="get_games_played-0">get_games_played/0</a></h3>
+<div class="spec">
+<p><tt>get_games_played() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_games_running-0">get_games_running/0</a></h3>
+<div class="spec">
+<p><tt>get_games_running() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_number_of_processes-0">get_number_of_processes/0</a></h3>
+<div class="spec">
+<p><tt>get_number_of_processes() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_private_lobbies_created-0">get_private_lobbies_created/0</a></h3>
+<div class="spec">
+<p><tt>get_private_lobbies_created() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_public_lobbies_created-0">get_public_lobbies_created/0</a></h3>
+<div class="spec">
+<p><tt>get_public_lobbies_created() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_server_busy-0">get_server_busy/0</a></h3>
+<div class="spec">
+<p><tt>get_server_busy() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_server_start_datetime-0">get_server_start_datetime/0</a></h3>
+<div class="spec">
+<p><tt>get_server_start_datetime() -&gt; list()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="get_server_version-0">get_server_version/0</a></h3>
+<div class="spec">
+<p><tt>get_server_version() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="handle_call-3">handle_call/3</a></h3>
+<div class="spec">
+<p><tt>handle_call(Request::any(), From::pid(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; {ok, any(), <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="handle_cast-2">handle_cast/2</a></h3>
+<div class="spec">
+<p><tt>handle_cast(Msg::any(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; {noreply, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="handle_info-2">handle_info/2</a></h3>
+<div class="spec">
+<p><tt>handle_info(Info::any(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; {noreply, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="init-1">init/1</a></h3>
+<div class="spec">
+<p><tt>init(X1::list()) -&gt; {ok, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="private_lobby_created-0">private_lobby_created/0</a></h3>
+<div class="spec">
+<p><tt>private_lobby_created() -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="public_lobby_created-0">public_lobby_created/0</a></h3>
+<div class="spec">
+<p><tt>public_lobby_created() -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="server_busy-0">server_busy/0</a></h3>
+<div class="spec">
+<p><tt>server_busy() -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="start_link-0">start_link/0</a></h3>
+<div class="spec">
+<p><tt>start_link() -&gt; {ok, pid()} | {error, {already_started, pid()}} | {error, Reason::any()}</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="terminate-2">terminate/2</a></h3>
+<div class="spec">
+<p><tt>terminate(Reason::any(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>

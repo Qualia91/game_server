@@ -1,0 +1,5 @@
+@author boc_dev
+@copyright MIT
+@version 0.1.0
+@title Welcome to the Websocket Turn Based Game Server
+@doc This is a game server for turn based games, using websockets.

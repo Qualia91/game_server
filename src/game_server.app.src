@@ -1,0 +1,23 @@
+{application, game_server,
+ [{description, "Websockets, turned based server"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {game_server_app, []}},
+  {applications,
+   [
+    crypto, 
+    cowboy, 
+    websocket_client, 
+    mochiweb, 
+    kernel, 
+    stdlib, 
+    lager,
+    gproc,
+    meck
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.

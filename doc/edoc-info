@@ -1,0 +1,4 @@
+%% encoding: UTF-8
+{application,game_server}.
+{modules,[game_handler,game_server_app,game_server_pub_sub,game_server_sup,
+          game_telemetry,site_sup,stats_handler]}.
