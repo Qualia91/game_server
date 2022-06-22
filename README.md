@@ -5,10 +5,12 @@
 <p align='center'>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg"/>
   <img src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/"/>
+  <img src="https://github.com/Qualia91/game_server/workflows/Erlang CI/badge.svg">
 </p>
 
 <p align='center'>
   <img src="https://img.shields.io/badge/Erlang-00ADD8?logo=erlang&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-00ADD8?logo=docker&logoColor=white" />
 </p>
 
 <details>
