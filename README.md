@@ -5,7 +5,7 @@
 <p align='center'>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg"/>
   <img src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/"/>
-  <img src="https://github.com/qualia91/game_server/actions/workflows/erlang.yml/badge.svg">
+  <img src="https://github.com/Qualia91/game_server/workflows/Erlang CI/badge.svg">
 </p>
 
 <p align='center'>
