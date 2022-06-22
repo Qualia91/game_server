@@ -4,8 +4,6 @@
 
 <p align='center'>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg"/>
-  <img src="https://img.shields.io/github/release/qualia91/game_server.svg"/>
-  <img src="https://img.shields.io/github/downloads/qualia91/game_server/total.svg"/>
   <img src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/"/>
 </p>
 
