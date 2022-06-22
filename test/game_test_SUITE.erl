@@ -124,7 +124,7 @@ create_and_find_games_test(_Config) ->
 
     gun:ws_send(Pid, {text, "{\"msg\": \"get_public_games\"}"}),
 
-    Resp = list_to_binary(io_lib:format("{\"games\": [<<\"~s\">>]}", [LobbyName])),
+    Resp = list_to_binary(io_lib:format("{\"games\":[\"~s\"]}", [LobbyName])),
     listener({text, Resp}),
     
     wsClose(Pid, Ref),

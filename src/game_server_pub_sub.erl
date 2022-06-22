@@ -245,7 +245,7 @@ api_test() ->
     ets:delete(?IDS_TABLE_NAME).
 
 public_games_test() ->
-    ets:new(?PUBLIC_LOBBIES_CREATED, [set, named_table, public]),
+    ets:new(?PUBLID_IDS_TABLE_NAME, [set, named_table, public]),
     LobbyName = <<"ABCDE">>,
     open_to_public(LobbyName),
     ?assertMatch(true, is_game_public(LobbyName), <<"game is public after opening">>),
@@ -253,7 +253,7 @@ public_games_test() ->
     close_to_public(LobbyName),
     ?assertMatch(false, is_game_public(LobbyName), <<"game is closed after closing">>),
     ?assertMatch([], get_public_games(), <<"0 public game">>),
-    ets:delete(?PUBLIC_LOBBIES_CREATED).
+    ets:delete(?PUBLID_IDS_TABLE_NAME).
 
 %%%===================================================================
 %%% Test internal functions
