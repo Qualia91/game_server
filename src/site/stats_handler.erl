@@ -91,4 +91,7 @@ create_response(Str, Inputs) ->
 
 -ifdef(TEST).
 
+create_response_test() ->
+    ?assertMatch(<<"here 1">>, create_response("here ~p", [1]), <<"Check basic conversion">>).
+
 -endif.

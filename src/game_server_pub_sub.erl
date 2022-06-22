@@ -275,7 +275,7 @@ lobby_leader_func(InputLobbyName, InputUserName) ->
         {gproc_ps_event,LobbyName,<<"End of game message">>} ->
             ?assertMatch(InputLobbyName, LobbyName, <<"Checking lobby name in lobby leader recieving message to quit">>),
             ?assertNotMatch({error, _}, end_game(LobbyName), <<"Checking game can be stopped">>);
-        Var ->
+        _Var ->
             ok
     end.
 
@@ -299,10 +299,10 @@ joining_player_func_inner(InputLobbyName, InputUserName) ->
             joining_player_func_inner(InputLobbyName, InputUserName);
         {gproc_ps_event,LobbyName,{game_ended, LobbyName}} ->
             ok;
-        {gproc_ps_event,LobbyName,Msg} ->
+        {gproc_ps_event,LobbyName,_Msg} ->
             ?assertMatch(InputLobbyName, LobbyName, <<"Checking lobby name in client message recieving message">>),
             joining_player_func_inner(InputLobbyName, InputUserName);
-        Var ->
+        _Var ->
             ok
     end.
 

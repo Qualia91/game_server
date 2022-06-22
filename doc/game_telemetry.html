@@ -41,6 +41,7 @@
 <tr><td valign="top"><a href="#get_server_busy-0">get_server_busy/0</a></td><td></td></tr>
 <tr><td valign="top"><a href="#get_server_start_datetime-0">get_server_start_datetime/0</a></td><td></td></tr>
 <tr><td valign="top"><a href="#get_server_version-0">get_server_version/0</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_websocket_connections-0">get_websocket_connections/0</a></td><td></td></tr>
 <tr><td valign="top"><a href="#handle_call-3">handle_call/3</a></td><td></td></tr>
 <tr><td valign="top"><a href="#handle_cast-2">handle_cast/2</a></td><td></td></tr>
 <tr><td valign="top"><a href="#handle_info-2">handle_info/2</a></td><td></td></tr>
@@ -50,6 +51,7 @@
 <tr><td valign="top"><a href="#server_busy-0">server_busy/0</a></td><td></td></tr>
 <tr><td valign="top"><a href="#start_link-0">start_link/0</a></td><td></td></tr>
 <tr><td valign="top"><a href="#terminate-2">terminate/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#websocket_connections-0">websocket_connections/0</a></td><td></td></tr>
 </table>
 
 <h2><a name="functions">Function Details</a></h2>
@@ -122,6 +124,12 @@
 <p> </p>
 </div>
 
+<h3 class="function"><a name="get_websocket_connections-0">get_websocket_connections/0</a></h3>
+<div class="spec">
+<p><tt>get_websocket_connections() -&gt; integer()</tt><br></p>
+<p> </p>
+</div>
+
 <h3 class="function"><a name="handle_call-3">handle_call/3</a></h3>
 <div class="spec">
 <p><tt>handle_call(Request::any(), From::pid(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; {ok, any(), <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
@@ -142,7 +150,7 @@
 
 <h3 class="function"><a name="init-1">init/1</a></h3>
 <div class="spec">
-<p><tt>init(X1::list()) -&gt; {ok, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
+<p><tt>init(X1::[]) -&gt; {ok, <a href="#type-loop_state">loop_state()</a>}</tt><br></p>
 <p> </p>
 </div>
 
@@ -173,6 +181,12 @@
 <h3 class="function"><a name="terminate-2">terminate/2</a></h3>
 <div class="spec">
 <p><tt>terminate(Reason::any(), LoopState::<a href="#type-loop_state">loop_state()</a>) -&gt; ok</tt><br></p>
+<p> </p>
+</div>
+
+<h3 class="function"><a name="websocket_connections-0">websocket_connections/0</a></h3>
+<div class="spec">
+<p><tt>websocket_connections() -&gt; ok</tt><br></p>
 <p> </p>
 </div>
 <hr>

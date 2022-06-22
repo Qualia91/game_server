@@ -1,5 +1,5 @@
 {application, game_server,
- [{description, "Websockets, turned based server"},
+ [{description, "Websockets turned based server"},
   {vsn, "0.1.0"},
   {registered, []},
   {mod, {game_server_app, []}},
