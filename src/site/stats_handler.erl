@@ -64,7 +64,7 @@ websocket_info(Info, State) ->
     lager:debug("Unknown Notification recieved: ~p", [Info]),
     {ok, State}.
 
-terminate(_Reason, _Req, LoopState) ->
+terminate(_Reason, _Req, _LoopState) ->
     lager:debug("Ending Stats Connection"),
     ok.
 

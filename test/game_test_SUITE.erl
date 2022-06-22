@@ -88,8 +88,7 @@ client_join_test(_Config) ->
     timer:sleep(500),
     
     ?assertEqual(2, game_telemetry:get_games_played(), <<"2 game has been created">>),
-    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>),
-    ?assertEqual(0, game_telemetry:get_games_running(), <<"0 game running">>).
+    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>).
 
 client_join_open_test(_Config) ->
     {Pid, Ref} = wsConnect(),
@@ -109,8 +108,7 @@ client_join_open_test(_Config) ->
 
     timer:sleep(500),
     
-    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>),
-    ?assertEqual(0, game_telemetry:get_games_running(), <<"0 game running">>).
+    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>).
 
 create_and_find_games_test(_Config) ->
     {Pid, Ref} = wsConnect(),
@@ -131,8 +129,7 @@ create_and_find_games_test(_Config) ->
 
     timer:sleep(500),
     
-    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>),
-    ?assertEqual(0, game_telemetry:get_games_running(), <<"0 game running">>).
+    ?assertEqual(0, game_telemetry:get_server_busy(), <<"0 server busy requests">>).
  
 %%%=============================================================================
 %%% Internal
@@ -144,7 +141,7 @@ wsConnect() ->
    Ref = monitor(process, Pid),
    gun:ws_upgrade(Pid, "/game_handler", [], #{compress => true}),
    receive
-      {gun_upgrade, _ConnPid, _StreamRef, _Other, Headers} ->
+      {gun_upgrade, _ConnPid, _StreamRef, _Other, _Headers} ->
         ok;
       Msg ->
         ct:print("Unexpected start message ~p", [Msg]),
@@ -187,6 +184,6 @@ client_process(LobbyName, Type) ->
     listener({binary, <<"ping">>}),
     {text, RespMsg} = listener(),
 
-    Resp = mochijson2:decode(RespMsg),
+    _Resp = mochijson2:decode(RespMsg),
     
     wsClose(Pid, Ref).

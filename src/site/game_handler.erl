@@ -22,7 +22,6 @@
 
 -define(SM, <<"\"">>).
 -define(COMMA, <<",">>).
--define(OPEN_SQR, <<"[">>).
 -define(CLOSE_SQR, <<"]">>).
 -define(CLOSE_CRL, <<"}">>).
 
@@ -67,15 +66,15 @@ websocket_handle(Msg, LoopState) ->
 
 websocket_info({timeout, _Ref, ping}, LoopState) ->
     {reply, {text, <<"ping">>}, LoopState};
-websocket_info({gproc_ps_event, LobbyName, Msg}, LoopState) when is_list(Msg) ->
+websocket_info({gproc_ps_event, _LobbyName, Msg}, LoopState) when is_list(Msg) ->
     {reply, {text, mochijson2:encode({struct, Msg})}, LoopState};
-websocket_info({gproc_ps_event, LobbyName, Msg}, LoopState) ->
+websocket_info({gproc_ps_event, _LobbyName, Msg}, LoopState) ->
     {reply, {text, mochijson2:encode({struct, [Msg]})}, LoopState};
 websocket_info(Info, State) ->
     lager:debug("Unknown Notification recieved: ~p", [Info]),
     {ok, State}.
 
-terminate(_Reason, _Req, LoopState = #loop_state{server_name = ServerName}) ->
+terminate(_Reason, _Req, #loop_state{server_name = ServerName}) ->
     Resp = game_server_pub_sub:end_game(ServerName),
     case Resp of
         {error, game_not_found} ->
