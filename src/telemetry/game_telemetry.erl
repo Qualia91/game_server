@@ -31,7 +31,9 @@
     get_public_lobbies_created/0,
     private_lobby_created/0,
     get_private_lobbies_created/0,
-    get_number_of_processes/0
+    get_number_of_processes/0,
+    websocket_connections/0,
+    get_websocket_connections/0
 ]).
 
 %% Callbacks
@@ -51,6 +53,7 @@
 -define(GAMES_PLAYED, 3).
 -define(PUBLIC_LOBBIES_CREATED, 4).
 -define(PRIVATE_LOBBIES_CREATED, 5).
+-define(WEBSOCKET_CONNECTIONS, 6).
 
 -ifdef(TEST).
 -include_lib("eunit/include/eunit.hrl").
@@ -58,7 +61,7 @@
 
 %% Loop state
 -record(loop_state, {
-    counter_obj           = counters:new(5, [write_concurrency]),
+    counter_obj           = counters:new(6, [write_concurrency]),
     server_start_datetime
 }).
 -type loop_state() :: loop_state.
@@ -131,6 +134,14 @@ get_server_version() ->
 get_number_of_processes() ->
     length(registered()).
 
+-spec websocket_connections() -> ok.
+websocket_connections() ->
+    gen_server:cast(?SERVER, {telemetry, add, ?WEBSOCKET_CONNECTIONS}).
+
+-spec get_websocket_connections() -> integer().
+get_websocket_connections() ->
+    gen_server:call(?SERVER, {telemetry, get, ?WEBSOCKET_CONNECTIONS}).
+    
 %%%=============================================================================
 %%% Gen Server Callbacks
 %%%=============================================================================

@@ -51,6 +51,7 @@ init(Req, [{stats_interval, SInterval}]) ->
 
 websocket_init(LoopState = #loop_state{interval = SInterval}) ->
     lager:debug("WS Connected"),
+    game_telemetry:websocket_connections(),
     erlang:start_timer(SInterval, self(), ping),
     {reply, {binary, <<"ping">>}, LoopState}.
 
