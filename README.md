@@ -9,6 +9,7 @@
 
 <p align='center'>
   <img src="https://img.shields.io/badge/Erlang-00ADD8?logo=erlang&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-00ADD8?logo=docker&logoColor=white" />
 </p>
 
 <details>
