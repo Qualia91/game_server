@@ -39,7 +39,7 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: game_server
-        environment_name: Gameserver-env
+        environment_name: Gameserver-env-2
         version_label: "game_server-${{ steps.format-time.outputs.replaced }}"
         region: eu-west-2
         deployment_package: deploy.zip
