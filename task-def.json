@@ -1,5 +1,6 @@
 {
     "family": "game_server_family",
+    "networkMode": "awsvpc",
     "containerDefinitions": [
         {
             "name": "game_server", 
