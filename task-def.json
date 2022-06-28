@@ -1,7 +1,7 @@
 {
     "family": "game_server_family",
     "networkMode": "awsvpc",
-    "executionRoleArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "executionRoleArn": "arn:aws:iam::014283623062:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "name": "game_server", 
