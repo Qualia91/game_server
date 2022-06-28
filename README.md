@@ -37,4 +37,5 @@ docker run -d -p 8080:8080 --init game_server
 ## Docker open shell
 docker run -itp 8080:8080 --init game_server sh
 
+nothing
 </details>
