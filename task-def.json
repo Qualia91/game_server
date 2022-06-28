@@ -1,0 +1,22 @@
+{
+    "family": "game_server_family",
+    "containerDefinitions": [
+        {
+            "name": "game_server", 
+            "image": "erlang:25-alpine", 
+            "portMappings": [
+                {
+                    "containerPort": 8080, 
+                    "hostPort": 8080, 
+                    "protocol": "tcp"
+                }
+            ], 
+            "essential": true
+        }
+    ], 
+    "requiresCompatibilities": [
+        "FARGATE"
+    ], 
+    "cpu": "256", 
+    "memory": "512"
+}
