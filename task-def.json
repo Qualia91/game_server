@@ -5,7 +5,7 @@
     "containerDefinitions": [
         {
             "name": "game_server", 
-            "image": "erlang:25-alpine", 
+            "image": "014283623062.dkr.ecr.eu-west-2.amazonaws.com/game_server:latest", 
             "portMappings": [
                 {
                     "containerPort": 8080, 
