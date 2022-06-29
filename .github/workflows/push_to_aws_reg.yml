@@ -1,9 +1,8 @@
 name: Push to AWS Docker Registry
 
 on:
-  push:
-    branches:
-      - "master"
+  repository_dispatch:
+    types: [trigger-aws-docker-deploy]
 
 env:
   AWS_REGION: eu-west-2
