@@ -5,7 +5,12 @@
 <p align='center'>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg"/>
   <img src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/"/>
+</p>
+
+<p align='center'>
   <img src="https://github.com/Qualia91/game_server/workflows/Erlang CI/badge.svg">
+  <img src="https://github.com/Qualia91/game_server/workflows/Docker/badge.svg">
+  <img src="https://github.com/Qualia91/game_server/workflows/Push to AWS Docker Registry/badge.svg">
 </p>
 
 <p align='center'>
