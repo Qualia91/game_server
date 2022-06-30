@@ -51,11 +51,11 @@ websocket_handle({_, <<"pong">>}, LoopState = #loop_state{interval = SInterval})
     {ok, LoopState};
 websocket_handle({_, <<"get_stats">>}, LoopState) ->
     Resp = create_response(
-        "{\"server_version\": ~p, \"server_start_datetime\": ~p, \"processes_running\": ~p, \"game_running\": ~p, \"games_played\": ~p, \"server_busy\": ~p, \"public_lobbies_created\": ~p, \"private_lobbies_created\": ~p, \"websocket_connections\": ~p}", 
+        "{\"server_version\": ~p, \"server_start_datetime\": ~p, \"total_memory_used\": ~p, \"game_running\": ~p, \"games_played\": ~p, \"server_busy\": ~p, \"public_lobbies_created\": ~p, \"private_lobbies_created\": ~p, \"websocket_connections\": ~p}", 
         [
             game_telemetry:get_server_version(), 
             game_telemetry:get_server_start_datetime(), 
-            game_telemetry:get_number_of_processes(), 
+            game_telemetry:get_ert_stats(total), 
             game_telemetry:get_games_running(), 
             game_telemetry:get_games_played(), 
             game_telemetry:get_server_busy(), 

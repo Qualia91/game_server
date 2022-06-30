@@ -33,7 +33,7 @@
     get_public_lobbies_created/0,
     private_lobby_created/0,
     get_private_lobbies_created/0,
-    get_number_of_processes/0,
+    get_ert_stats/1,
     websocket_connections/0,
     get_websocket_connections/0
 ]).
@@ -132,9 +132,9 @@ get_server_version() ->
     {ok, ServerVersion} = application:get_env(game_server, server_version),
     ServerVersion.
    
--spec get_number_of_processes() -> integer(). 
-get_number_of_processes() ->
-    length(registered()).
+-spec get_ert_stats(atom()) -> binary(). 
+get_ert_stats(Type) ->
+    erlang:memory(Type).
 
 -spec websocket_connections() -> ok.
 websocket_connections() ->
@@ -185,7 +185,6 @@ code_change(_OldVsn, LoopState, _Extra) ->
 %%%===================================================================
 %%% Internal functions
 %%%===================================================================
-
 
 %%%===================================================================
 %%% Tests
